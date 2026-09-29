@@ -1,0 +1,3 @@
+# Paths DVC should not scan.
+.venv/
+__pycache__/

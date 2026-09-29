@@ -1,0 +1,24 @@
+# The pipeline. `dvc repro` runs only the stages whose deps or params changed.
+stages:
+  prepare:
+    cmd: python src/data.py
+    deps:
+      - src/data.py
+    outs:
+      - data/iris.csv
+
+  train:
+    cmd: python src/train.py
+    deps:
+      - src/train.py
+      - data/iris.csv
+    params:
+      - test_size
+      - random_state
+      - n_estimators
+      - max_depth
+    outs:
+      - models/model.joblib
+    metrics:
+      - metrics.json:
+          cache: false

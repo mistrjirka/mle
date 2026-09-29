@@ -1,0 +1,30 @@
+# --- data and models live in DVC, never in git ---
+# The files themselves are ignored, but DVC's pointer files (*.dvc) and the
+# .gitignore DVC writes MUST be committed - they are how the data is found.
+/data/*
+!/data/.gitkeep
+!/data/.gitignore
+!/data/*.dvc
+/models/*
+!/models/.gitkeep
+!/models/.gitignore
+!/models/*.dvc
+
+# --- generated ---
+metrics.json
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# --- environments ---
+.venv/
+venv/
+
+# --- editors / OS ---
+.vscode/
+.idea/
+.DS_Store
+
+# --- notebooks: strip outputs before committing ---
+.ipynb_checkpoints/
