@@ -3,5 +3,5 @@
 
 test_size: 0.2        # how much data is held out for testing
 random_state: 42      # fixed seed, so two runs are comparable
-n_estimators: 100     # trees in the forest
-max_depth: 4          # how deep each tree may grow
+n_estimators: 400     # trees in the forest
+max_depth: 6       # how deep each tree may grow
